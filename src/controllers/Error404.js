@@ -6,7 +6,7 @@ const Error404 = class {
   }
 
   render() {
-    return '<h1>404<h1>';
+    return '';
   }
 
   run() {

@@ -1,5 +1,57 @@
 @charset "utf-8";
 
+body {
+  font-family: 'Arial' , sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f2f2f2;
+  flex-direction: column;  
+}
+
+#chat-container {
+  width: 300px;
+  height: 400px;
+  overflow-y: scroll;
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #fff;
+  margin-bottom: 10px;
+}
+
+#container {
+  width: 300px;
+  height: 300px;
+}
+
+#send-button {
+  width: calc(100% - 20px);
+  padding: 6px;
+  background-color: purple;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+ 
+#user-input {
+  width: calc(100% - 20px);
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+#chat-title {
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+#send-button:hover {
+  background-color: pink;
+}
+
 h1 {
   color: red;
 }
