@@ -1,16 +1,16 @@
 @charset "utf-8";
 
-body {
-  font-family: 'Arial' , sans-serif;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f2f2f2;
-  flex-direction: column;  
-}
+// body {
+//   font-family: 'Arial' , sans-serif;
+//   margin: 0;
+//   padding: 0;
+//   // display: flex;
+//   // justify-content: center;
+//   // align-items: center;
+//   height: 100vh;
+//   background-color: #f2f2f2;
+//   flex-direction: column;  
+// }
 
 #chat-container {
   width: 300px;
@@ -20,6 +20,11 @@ body {
   padding: 10px;
   background-color: #fff;
   margin-bottom: 10px;
+  // position: absolute; 
+}
+
+.chat-view {
+  justify-content: center;
 }
 
 #container {
@@ -28,7 +33,9 @@ body {
 }
 
 #send-button {
-  width: calc(100% - 20px);
+  // position: absolute;
+  // text-align: center;
+  width: 300px;
   padding: 6px;
   background-color: purple;
   color: white;
@@ -37,7 +44,7 @@ body {
 }
  
 #user-input {
-  width: calc(100% - 20px);
+  width: 300px;
   padding: 5px;
   margin-bottom: 10px;
 }

@@ -4,7 +4,7 @@ import Home from './controllers/Home';
 import './index.scss';
 
 const routes = [{
-  url: '/search',
+  url: '/home',
   controller: Home
 }];
 
