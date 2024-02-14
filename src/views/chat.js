@@ -1,6 +1,8 @@
 export default () => (
-  `<div class="chat-view">
-    <h2 id="chat-title">Chatbot</h2>
+  `
+    
+    <div class="chat-view">
+    <h2 id="chat-title">ChatBØT</h2>
     <div id="chat-container">
     </div>
     <div id="container">
