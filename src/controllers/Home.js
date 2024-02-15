@@ -5,13 +5,11 @@ import viewNav from '../views/nav';
 // import viewListMessages from '../views/list-message';
 import viewChat from '../views/chat';
 
-const dataMessages = [];
-
 const Home = class {
   constructor(params) {
     this.el = document.querySelector('#root');
     this.params = params;
-    this.data = [];
+    this.dataMessages = [];
 
     this.run();
   }
@@ -41,7 +39,7 @@ const Home = class {
 
   newMessage(content, userType = 'user') {
     const message = { content, userType };
-    dataMessages.push(message);
+    this.dataMessages.push(message);
   }
 
   render() {
