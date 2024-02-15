@@ -1,5 +1,6 @@
 // import axios from 'axios';
 
+import viewBots from '../views/bots';
 import viewNav from '../views/nav';
 // import viewListMessages from '../views/list-message';
 import viewChat from '../views/chat';
@@ -13,39 +14,45 @@ const Home = class {
     this.run();
   }
 
-  // onKeyUp() {
-  //   const elInputSearch = document.querySelector('.input-search');
-  //   const elListUser = document.querySelector('.list-user');
+  onKeyUp() {
+    const elSendButton = document.querySelector('#send-button');
 
-  //   elInputSearch.addEventListener('keyup', () => {
-  //     const keyWord = elInputSearch.value;
-  //     const data = this.filters(
-  //       'name',
-  //       this.data,
-  //       ({ user }) => user.name.first.includes(keyWord)
-  //     );
+    elSendButton.addEventListener('click', () => {
+      console.log('send pressed');
+    });
+  }
 
-  //     elListUser.innerHTML = viewListUsers(data);
-  //   });
-  // }
+  onEnterPress() {
+    document.addEventListener('keypress', (event) => {
+      if (event.key === 'Enter') {
+        console.log('Enter pressed');
+      }
+    });
+  }
+
+  newMessage(sender, receiver, content, userType) {
+
+  }
 
   render() {
     return `
-    
     <div class="row">
-    <div class="container">
-      <div class="col-12">${viewNav()}</div>
+      <div class="container">
+        <div class="col-12">${viewNav()}</div>
+      </div>
+      <div class="chatbox">
+        ${viewChat()}
+        ${viewBots()}
+      </div>
     </div>
-    <div class="chatbox">
-      ${viewChat()}
-    </div>
-  </div>
-  `;
+    `;
   }
 
   run() {
     // const { results } = this.params;
     this.el.innerHTML = this.render();
+    this.onKeyUp();
+    this.onEnterPress();
     // axios
     //   .get(`https://randomuser.me/api/0.8/?results=${results}`)
     //   .then((res) => {
