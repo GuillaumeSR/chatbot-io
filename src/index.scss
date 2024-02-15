@@ -12,6 +12,11 @@ body {
   flex-direction: column;
 }
 
+html,body  
+{  
+overflow:hidden;  
+} 
+
 
 .navbar {
   background-color: #4b7038;
@@ -24,6 +29,23 @@ body {
   border: 2px solid #6A9554;
   background-color: #D6F2C7;
   margin-bottom: 10px;
+  border-radius: 20px;
+  box-shadow:inset;
+}
+
+#chat-container {
+  width: 600px;
+  height: 400px;
+  overflow-y: scroll;
+  border: 2px solid #6A9554;
+  background-color: #D6F2C7;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  box-shadow: inset;
+}
+
+#chat-container::-webkit-scrollbar {
+  background-color: #4b7038;
 }
 
 .message {
@@ -49,8 +71,6 @@ body {
   text-align: right;
   margin-left: 305px;
 }
-
-
 
 .chat-view {
   display: flex;
