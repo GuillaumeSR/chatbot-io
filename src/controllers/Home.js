@@ -5,6 +5,8 @@ import viewNav from '../views/nav';
 // import viewListMessages from '../views/list-message';
 import viewChat from '../views/chat';
 
+const dataMessages = [];
+
 const Home = class {
   constructor(params) {
     this.el = document.querySelector('#root');
@@ -16,22 +18,30 @@ const Home = class {
 
   onKeyUp() {
     const elSendButton = document.querySelector('#send-button');
+    const elUserInput = document.querySelector('#user-input');
 
     elSendButton.addEventListener('click', () => {
-      console.log('send pressed');
-    });
-  }
-
-  onEnterPress() {
-    document.addEventListener('keypress', (event) => {
-      if (event.key === 'Enter') {
-        console.log('Enter pressed');
+      if (elUserInput) {
+        this.newMessage(elUserInput);
       }
     });
   }
 
-  newMessage(sender, receiver, content, userType) {
+  onEnterPress() {
+    const elUserInput = document.querySelector('#user-input');
 
+    document.addEventListener('keypress', (event) => {
+      if (event.key === 'Enter') {
+        if (elUserInput) {
+          this.newMessage(elUserInput);
+        }
+      }
+    });
+  }
+
+  newMessage(content, userType = 'user') {
+    const message = { content, userType };
+    dataMessages.push(message);
   }
 
   render() {
@@ -41,7 +51,7 @@ const Home = class {
         <div class="col-12">${viewNav()}</div>
       </div>
       <div class="chatbox">
-        ${viewChat()}
+        ${viewChat(this.dataMessages)}
         ${viewBots()}
       </div>
     </div>
