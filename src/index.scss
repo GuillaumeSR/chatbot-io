@@ -12,20 +12,45 @@ body {
   flex-direction: column;
 }
 
+
 .navbar {
   background-color: #4b7038;
 }
 
 #chat-container {
-  width: 300px;
+  width: 600px;
   height: 400px;
   overflow-y: scroll;
   border: 2px solid #6A9554;
-  padding: 10px;
   background-color: #D6F2C7;
   margin-bottom: 10px;
-  // position: absolute;
 }
+
+.message {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  width: 45%;
+}
+
+.bot {
+  background-color: #4b7038;
+}
+
+.user {
+  background-color: #6cad6f;
+}
+
+.bot {
+  text-align: left;
+}
+
+.user { 
+  text-align: right;
+  margin-left: 305px;
+}
+
+
 
 .chat-view {
   display: flex;
@@ -35,16 +60,31 @@ body {
   height: 100vh;
 }
 
+.chat-box {
+  display:flex;
+}
+
+.bot-view {
+  width: 300px;
+  position: absolute;
+  top: 300px;
+  left: 10%;
+}
+
+.list-group-item {
+  background-color: #4b7038;
+  padding: 30px;
+}
 
 #container {
-  width: 300px;
+  width: 600px;
   height: 300px;
 }
 
 #send-button {
   // position: absolute;
   // text-align: center;
-  width: 300px;
+  width: 600px;
   padding: 6px;
   background-color: #4b7038;
   color: white;
@@ -53,9 +93,14 @@ body {
 }
  
 #user-input {
-  width: 300px;
+  width: 600px;
   padding: 5px;
   margin-bottom: 10px;
+}
+
+.bot-image {
+  width: 50px;
+  border-radius: 50%;
 }
 
 #chat-title {
@@ -93,8 +138,8 @@ body {
 }
 
 .btn-unique::after {
-  content: '\f17e';
-  font-family: 'Font Awesome 5 Free';
+  content: '☻';
+  // font-family: 'Font Awesome 5 Free';
   position: absolute;
   opacity: 0;  
   top: 14px;
