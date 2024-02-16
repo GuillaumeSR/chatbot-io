@@ -9,14 +9,14 @@ const Home = class {
   constructor(params) {
     this.el = document.querySelector('#root');
     this.params = params;
-    this.dataMessages = [];
+    this.dataMessages = [{ content: 'Bonjour !', userType: 'user' }];
 
     this.run();
   }
 
   onKeyUp() {
     const elSendButton = document.querySelector('#send-button');
-    const elUserInput = document.querySelector('#user-input');
+    const elUserInput = document.querySelector('#user-input').value;
 
     elSendButton.addEventListener('click', () => {
       if (elUserInput) {
@@ -26,7 +26,7 @@ const Home = class {
   }
 
   onEnterPress() {
-    const elUserInput = document.querySelector('#user-input');
+    const elUserInput = document.querySelector('#user-input').value;
 
     document.addEventListener('keypress', (event) => {
       if (event.key === 'Enter') {

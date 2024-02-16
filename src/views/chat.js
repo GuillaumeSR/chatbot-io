@@ -1,7 +1,7 @@
 import viewListMessages from './list-message';
 
 export default (data) => (
-  `   
+  `
     <div class="chat-view">
       <h2 id="chat-title">ChatBØT</h2>
       ${viewListMessages(data)}
@@ -11,3 +11,7 @@ export default (data) => (
   </div>
   `
 );
+
+// export default (data) => {
+//   console.log(data);
+// };
