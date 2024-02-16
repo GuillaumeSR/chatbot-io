@@ -17,31 +17,28 @@ html,body
 overflow:hidden;  
 } 
 
+.logo {
+  width: 100px;
+  height: 100px;
+  margin-left: 150%;
+  border-radius: 50%;
+}
+
 
 .navbar {
   background-color: #4b7038;
+  margin-bottom: 50px;
 }
 
 #chat-container {
-  width: 600px;
-  height: 400px;
+  width: 1000px;
+  height: 600px;
   overflow-y: scroll;
   border: 2px solid #6A9554;
   background-color: #D6F2C7;
   margin-bottom: 10px;
   border-radius: 20px;
   box-shadow:inset;
-}
-
-#chat-container {
-  width: 600px;
-  height: 400px;
-  overflow-y: scroll;
-  border: 2px solid #6A9554;
-  background-color: #D6F2C7;
-  margin-bottom: 10px;
-  border-radius: 20px;
-  box-shadow: inset;
 }
 
 #chat-container::-webkit-scrollbar {
@@ -51,8 +48,8 @@ overflow:hidden;
 .message {
   margin: 10px;
   padding: 10px;
-  border-radius: 5px;
-  width: 45%;
+  border-radius: 30px;
+  width: 55%;
 }
 
 .bot {
@@ -61,6 +58,7 @@ overflow:hidden;
 
 .user {
   background-color: #6cad6f;
+  border-top-right-radius: 0px;
 }
 
 .bot {
@@ -69,7 +67,7 @@ overflow:hidden;
 
 .user { 
   text-align: right;
-  margin-left: 305px;
+  margin-left: 431px;
 }
 
 .chat-view {
@@ -78,6 +76,7 @@ overflow:hidden;
   align-items: center;
   justify-content: center;
   height: 100vh;
+  margin-left: 550px;
 }
 
 .chat-box {
@@ -87,7 +86,7 @@ overflow:hidden;
 .bot-view {
   width: 300px;
   position: absolute;
-  top: 300px;
+  top: 190px;
   left: 10%;
 }
 
@@ -97,14 +96,14 @@ overflow:hidden;
 }
 
 #container {
-  width: 600px;
+  width: 1000px;
   height: 300px;
 }
 
 #send-button {
   // position: absolute;
   // text-align: center;
-  width: 600px;
+  width: 1000px;
   padding: 6px;
   background-color: #4b7038;
   color: white;
@@ -113,7 +112,7 @@ overflow:hidden;
 }
  
 #user-input {
-  width: 600px;
+  width: 1000px;
   padding: 5px;
   margin-bottom: 10px;
 }
@@ -127,8 +126,8 @@ overflow:hidden;
   font-weight: bold;
   text-align: center;
   font-size: 1.5em;
-  margin-top: 50px;
-  margin-bottom: 100px;
+  // margin-top: 50px;
+  // margin-bottom: 100px;
   color: #fff;
 }
 
@@ -137,8 +136,10 @@ overflow:hidden;
 }
 
 .btn-nav {
-  margin-left: 20%;
+  padding-right: 150px;
 }
+
+
 .btn-unique {
   border-radius: 4px;
   background-color: #75a05e;
@@ -161,7 +162,7 @@ overflow:hidden;
   content: '☻';
   // font-family: 'Font Awesome 5 Free';
   position: absolute;
-  opacity: 0;  
+  opacity: 0;
   top: 14px;
   right: -10px;
   transition: 0.5s;
