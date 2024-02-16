@@ -1,7 +1,7 @@
 import viewMessage from './message';
 
 // export default (data) => {
-//   console.log(data);
+//   console.log(data.map((message) => viewMessage(message)).join(''));
 // };
 
 export default (data) => (

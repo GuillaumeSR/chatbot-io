@@ -5,41 +5,74 @@ import viewNav from '../views/nav';
 // import viewListMessages from '../views/list-message';
 import viewChat from '../views/chat';
 
+// const dataMessages = [{ content: 'Bonjour !', userType: 'user' }];
+// localStorage.setItem('messages', JSON.stringify(dataMessages));
+// let messages = localStorage.getItem('messages');
+// console.log(JSON.parse(messages));
+// const oldDataMessages = JSON.parse(messages);
+// const newEntry = { content: 'Salut !', userType: 'bot' };
+// oldDataMessages.push(newEntry);
+// localStorage.setItem('messages', JSON.stringify(oldDataMessages));
+// messages = localStorage.getItem('messages');
+// console.log(JSON.parse(messages));
+
+// localStorage.clear();
+
+const setMessages = [];
+
+if (JSON.parse(localStorage.getItem('messages')) == null) localStorage.setItem('messages', JSON.stringify(setMessages));
+
 const Home = class {
   constructor(params) {
     this.el = document.querySelector('#root');
     this.params = params;
-    this.dataMessages = [{ content: 'Bonjour !', userType: 'user' }];
+    // const dataMessages = { content: 'Bonjour !', userType: 'user' };
+    // window.localStorage.setItem('messages', dataMessages);
+    // const messages = window.localStorage.getItem('message');
+    // console.log(messages);
 
     this.run();
   }
 
   onKeyUp() {
     const elSendButton = document.querySelector('#send-button');
-    const elUserInput = document.querySelector('#user-input').value;
 
     elSendButton.addEventListener('click', () => {
-      if (elUserInput) {
+      const elUserInput = document.querySelector('#user-input').value;
+
+      if ((typeof elUserInput === 'string' && elUserInput.length === 0) || elUserInput === null) {
+        console.log('vide');
+      } else {
         this.newMessage(elUserInput);
       }
     });
   }
 
   onEnterPress() {
-    const elUserInput = document.querySelector('#user-input').value;
-
     document.addEventListener('keypress', (event) => {
       if (event.key === 'Enter') {
-        if (elUserInput) {
+        const elUserInput = document.querySelector('#user-input').value;
+
+        if ((typeof elUserInput === 'string' && elUserInput.length === 0) || elUserInput === null) {
+          console.log('vide');
+        } else {
           this.newMessage(elUserInput);
         }
       }
     });
   }
 
-  newMessage(content, userType = 'user') {
-    const message = { content, userType };
-    this.dataMessages.push(message);
+  newMessage(content, userType = 'bot') {
+    let existingEntries = JSON.parse(localStorage.getItem('messages'));
+    if (existingEntries == null) existingEntries = [];
+    const entry = {
+      content,
+      userType
+    };
+    localStorage.setItem('message', JSON.stringify(entry));
+
+    existingEntries.push(entry);
+    localStorage.setItem('messages', JSON.stringify(existingEntries));
   }
 
   render() {
@@ -49,7 +82,7 @@ const Home = class {
         <div class="col-12">${viewNav()}</div>
       </div>
       <div class="chatbox">
-        ${viewChat(this.dataMessages)}
+        ${viewChat(JSON.parse(localStorage.getItem('messages')))}
         ${viewBots()}
       </div>
     </div>
