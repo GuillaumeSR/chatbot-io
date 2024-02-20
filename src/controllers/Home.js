@@ -73,7 +73,7 @@ const Home = class {
 
   render() {
     return `
-    <div class="row">
+    <div class="row g-0">
       <div class="container">
         <div class="col-12">${viewNav()}</div>
       </div>
