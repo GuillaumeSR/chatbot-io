@@ -139,6 +139,23 @@ const Home = class {
     //     );
     //     this.onKeyUp();
     //   });
+
+    // const options = {
+    //   method: 'GET',
+    //   url: 'https://one-piece2.p.rapidapi.com/v2/getCharacter/Shanks',
+    //   headers: {
+    //     token: 'ab84ad27eb9fe47b625069a7f0a4833fb92439639d9a57f7a56ca60bc4a8fbc6',
+    //     'X-RapidAPI-Key': 'b9baa2fc89mshcfc6ae8d8d2fea5p19a803jsnf4fd05ea78e4',
+    //     'X-RapidAPI-Host': 'one-piece2.p.rapidapi.com'
+    //   }
+    // };
+
+    // try {
+    //   const response = axios.request(options);
+    //   console.log(response.data);
+    // } catch (error) {
+    //   console.error(error);
+    // }
   }
 };
 
