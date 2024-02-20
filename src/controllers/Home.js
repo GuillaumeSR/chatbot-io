@@ -40,6 +40,7 @@ import viewChat from '../views/chat';
 // console.log(JSON.parse(messages));
 
 // localStorage.clear();
+// localStorage.removeItem('messages');
 
 const setMessages = [];
 
@@ -94,6 +95,8 @@ const Home = class {
     localStorage.setItem('messages', JSON.stringify(existingEntries));
 
     this.el.innerHTML = this.render();
+    const elRightSide = document.querySelector('.messages-section');
+    elRightSide.scrollTo(0, elRightSide.scrollHeight);
   }
 
   render() {
@@ -115,6 +118,8 @@ const Home = class {
   run() {
     // const { results } = this.params;
     this.el.innerHTML = this.render();
+    const elRightSide = document.querySelector('.messages-section');
+    elRightSide.scrollTo(0, elRightSide.scrollHeight);
     this.onKeyUp();
     this.onEnterPress();
     // axios
