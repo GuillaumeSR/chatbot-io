@@ -12,10 +12,10 @@ body {
   flex-direction: column;
 }
 
-html,body  
-{  
-overflow:hidden;  
-} 
+// html,body  
+// {  
+// overflow:hidden;  
+// } 
 
 .logo {
   width: 100px;
@@ -24,21 +24,21 @@ overflow:hidden;
   border-radius: 50%;
 }
 
-
 .navbar {
   background-color: #4b7038;
-  margin-bottom: 50px;
+  margin-bottom: 4%;
 }
 
 #chat-container {
-  width: 1000px;
-  height: 600px;
+  width: 75%;
+  height:70%;
   overflow-y: scroll;
   border: 2px solid #6A9554;
   background-color: #D6F2C7;
   margin-bottom: 10px;
   border-radius: 30px;
   box-shadow:inset;
+  max-height: 70%;
 }
 
 #chat-container::-webkit-scrollbar {
@@ -70,7 +70,7 @@ overflow:hidden;
 
 .user { 
   text-align: right;
-  margin-left: 431px;
+  margin-left: 44%;
 }
 
 .chat-view {
@@ -79,15 +79,15 @@ overflow:hidden;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  margin-left: 550px;
+  margin-left: 30%;
 }
 
-.chat-box {
-  display:flex;
-}
+// .chat-box {
+//   display:flex;
+// }
 
 .bot-view {
-  width: 300px;
+  width: 20%;
   position: absolute;
   top: 169px;
   left: 10%;
@@ -105,25 +105,28 @@ overflow:hidden;
 }
 
 #container {
-  width: 1000px;
+  width: 75%;
   height: 300px;
+  color: #75a05e;
 }
 
 #send-button {
   // position: absolute;
   // text-align: center;
-  width: 1000px;
+  width: 100%;
   padding: 6px;
   background-color: #4b7038;
   color: white;
   border: none;
   cursor: pointer;
+  border-radius: 10px;
 }
  
 #user-input {
-  width: 1000px;
+  width: 100%;
   padding: 5px;
   margin-bottom: 10px;
+  border-radius: 10px;
 }
 
 .bot-image {
@@ -145,7 +148,7 @@ overflow:hidden;
 }
 
 .btn-nav {
-  padding-right: 150px;
+  padding-right: 160px;
 }
 
 
