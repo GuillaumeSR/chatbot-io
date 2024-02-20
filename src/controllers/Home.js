@@ -73,13 +73,15 @@ const Home = class {
 
   render() {
     return `
-    <div class="row g-0">
-      <div class="container">
-        <div class="col-12">${viewNav()}</div>
-      </div>
-      <div class="chatbox">
-        ${viewChat(JSON.parse(localStorage.getItem('messages')))}
-        ${viewBots()}
+    <div>${viewNav()}</div>
+    <div class="container">
+        <div class="row">
+          <div class="col-3">
+          ${viewBots()}
+          </div>
+          <div class="col-9">
+          ${viewChat(JSON.parse(localStorage.getItem('messages')))}
+          </div>
       </div>
     </div>
     `;

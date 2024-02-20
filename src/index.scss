@@ -20,7 +20,7 @@ body {
 .logo {
   width: 100px;
   height: 100px;
-  margin-left: 150%;
+  // margin-left: 150%;
   border-radius: 50%;
 }
 
@@ -30,7 +30,7 @@ body {
 }
 
 #chat-container {
-  width: 75%;
+  width: 100%;
   height:70%;
   overflow-y: scroll;
   border: 2px solid #6A9554;
@@ -38,7 +38,7 @@ body {
   margin-bottom: 10px;
   border-radius: 30px;
   box-shadow:inset;
-  max-height: 70%;
+  max-height: 100%;
 }
 
 #chat-container::-webkit-scrollbar {
@@ -79,7 +79,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  margin-left: 30%;
+  // margin-left: 30%;
 }
 
 // .chat-box {
@@ -87,10 +87,10 @@ body {
 // }
 
 .bot-view {
-  width: 20%;
-  position: absolute;
-  top: 169px;
-  left: 10%;
+  // width: %;
+  // position: absolute;
+  // top: 169px;
+  // left: 10%;
 }
 
 .list-group {
@@ -101,11 +101,11 @@ body {
   background-color: #4b7038;
   padding: 30px;
   border-radius: 30px;
-  margin-top: 20px;
+  // margin-top: 20px;
 }
 
 #container {
-  width: 75%;
+  width: 100%;
   height: 300px;
   color: #75a05e;
 }
@@ -148,7 +148,7 @@ body {
 }
 
 .btn-nav {
-  padding-right: 160px;
+  // padding-right: 160px;
 }
 
 
