@@ -3,7 +3,7 @@ import viewListMessages from './list-message';
 export default (data) => (
   `
   <div class="chat-view">
-    <div id="chat-container">
+    <div class="messages-section" id="chat-container">
       ${viewListMessages(data)}
     </div>
     <div id="container">
