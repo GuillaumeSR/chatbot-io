@@ -40,9 +40,7 @@ const Home = class {
     elSendButton.addEventListener('click', () => {
       const elUserInput = document.querySelector('#user-input').value;
 
-      if ((typeof elUserInput === 'string' && elUserInput.length === 0) || elUserInput === null) {
-        console.log('vide');
-      } else {
+      if (typeof elUserInput === 'string' && elUserInput.length !== 0 && elUserInput !== null) {
         this.newMessage(elUserInput);
       }
     });
@@ -53,9 +51,7 @@ const Home = class {
       if (event.key === 'Enter') {
         const elUserInput = document.querySelector('#user-input').value;
 
-        if ((typeof elUserInput === 'string' && elUserInput.length === 0) || elUserInput === null) {
-          console.log('vide');
-        } else {
+        if (typeof elUserInput === 'string' && elUserInput.length !== 0 && elUserInput !== null) {
           this.newMessage(elUserInput);
         }
       }
