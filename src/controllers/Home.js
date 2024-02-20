@@ -5,19 +5,31 @@ import viewNav from '../views/nav';
 // import viewListMessages from '../views/list-message';
 import viewChat from '../views/chat';
 
-const dataBots = [{
-  name: 'Veldra',
-  image: '../images/veldra.jpg',
-  description: 'API perso d anime',
-  commands: ['hello', 'character']
-},
-{
-  name: 'Limule',
-  image: 'user',
-  description: 'API perso d anime',
-  commands: ['hello', 'character']
-}];
-localStorage.setItem('bots', JSON.stringify(dataBots));
+// const dataBots = [{
+//   name: 'Veldra',
+//   image: 'https://i.pinimg.com/736x/d3/01/b6/d301b6d9ee94cee3ce81bb3352c049af.jpg',
+//   description: 'API perso d anime',
+//   commands: ['hello', 'character']
+// },
+// {
+//   name: 'Limule',
+//   image: 'https://katana-anime.com/cdn/shop/articles/727e572c1a4503e860f5779c0b72258b_640x.png?v=1654355532',
+//   description: 'API perso d anime',
+//   commands: ['hello', 'character']
+// },
+// {
+//   name: 'Benimaru',
+//   image: 'https://www.nautiljon.com/images/perso/00/85/benimaru_17758.webp',
+//   description: 'API perso d anime',
+//   commands: ['hello', 'character']
+// },
+// {
+//   name: 'Diablo',
+//   image: 'https://i.pinimg.com/originals/72/48/30/7248304fefb72d4bfc0e5daa2109da1c.jpg',
+//   description: 'API perso d anime',
+//   commands: ['hello', 'character']
+// }];
+// localStorage.setItem('bots', JSON.stringify(dataBots));
 // let messages = localStorage.getItem('messages');
 // console.log(JSON.parse(messages));
 // const oldDataMessages = JSON.parse(messages);
@@ -80,6 +92,8 @@ const Home = class {
 
     existingEntries.push(entry);
     localStorage.setItem('messages', JSON.stringify(existingEntries));
+
+    this.el.innerHTML = this.render();
   }
 
   render() {
