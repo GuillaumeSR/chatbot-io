@@ -40,6 +40,7 @@ import viewChat from '../views/chat';
 // console.log(JSON.parse(messages));
 
 // localStorage.clear();
+// localStorage.removeItems('messages');
 
 const setMessages = [];
 
@@ -81,7 +82,7 @@ const Home = class {
     });
   }
 
-  newMessage(content, userType = 'bot') {
+  newMessage(content, userType = 'user') {
     let existingEntries = JSON.parse(localStorage.getItem('messages'));
     if (existingEntries == null) existingEntries = [];
     const entry = {
@@ -92,6 +93,16 @@ const Home = class {
 
     existingEntries.push(entry);
     localStorage.setItem('messages', JSON.stringify(existingEntries));
+
+    if (userType === 'user' && content.toLowerCase() === 'ronaldo') {
+      const botAnswer = 'Suiiiiiii';
+      const botEntry = {
+        content: botAnswer,
+        userType: 'bot'
+      };
+      existingEntries.push(botEntry);
+      localStorage.setItem('messages', JSON.stringify(existingEntries));
+    }
 
     this.el.innerHTML = this.render();
   }
