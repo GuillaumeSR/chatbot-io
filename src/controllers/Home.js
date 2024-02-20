@@ -1,12 +1,23 @@
 // import axios from 'axios';
 
-import viewBots from '../views/bots';
+import viewListBots from '../views/list-bots';
 import viewNav from '../views/nav';
 // import viewListMessages from '../views/list-message';
 import viewChat from '../views/chat';
 
-// const dataMessages = [{ content: 'Bonjour !', userType: 'user' }];
-// localStorage.setItem('messages', JSON.stringify(dataMessages));
+const dataBots = [{
+  name: 'Veldra',
+  image: '../images/veldra.jpg',
+  description: 'API perso d anime',
+  commands: ['hello', 'character']
+},
+{
+  name: 'Limule',
+  image: 'user',
+  description: 'API perso d anime',
+  commands: ['hello', 'character']
+}];
+localStorage.setItem('bots', JSON.stringify(dataBots));
 // let messages = localStorage.getItem('messages');
 // console.log(JSON.parse(messages));
 // const oldDataMessages = JSON.parse(messages);
@@ -77,7 +88,7 @@ const Home = class {
     <div class="container">
         <div class="row">
           <div class="col-3">
-          ${viewBots()}
+          ${viewListBots(JSON.parse(localStorage.getItem('bots')))}
           </div>
           <div class="col-9">
           ${viewChat(JSON.parse(localStorage.getItem('messages')))}
