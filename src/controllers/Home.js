@@ -5,30 +5,6 @@ import viewNav from '../views/nav';
 // import viewListMessages from '../views/list-message';
 import viewChat from '../views/chat';
 
-// const dataBots = [{
-//   name: 'Veldra',
-//   image: 'https://i.pinimg.com/736x/d3/01/b6/d301b6d9ee94cee3ce81bb3352c049af.jpg',
-//   description: 'API perso d anime',
-//   commands: ['hello', 'character']
-// },
-// {
-//   name: 'Limule',
-//   image: 'https://katana-anime.com/cdn/shop/articles/727e572c1a4503e860f5779c0b72258b_640x.png?v=1654355532',
-//   description: 'API perso d anime',
-//   commands: ['hello', 'character']
-// },
-// {
-//   name: 'Benimaru',
-//   image: 'https://www.nautiljon.com/images/perso/00/85/benimaru_17758.webp',
-//   description: 'API perso d anime',
-//   commands: ['hello', 'character']
-// },
-// {
-//   name: 'Diablo',
-//   image: 'https://i.pinimg.com/originals/72/48/30/7248304fefb72d4bfc0e5daa2109da1c.jpg',
-//   description: 'API perso d anime',
-//   commands: ['hello', 'character']
-// }];
 // localStorage.setItem('bots', JSON.stringify(dataBots));
 // let messages = localStorage.getItem('messages');
 // console.log(JSON.parse(messages));
@@ -41,11 +17,13 @@ import viewChat from '../views/chat';
 
 // localStorage.clear();
 
-// localStorage.removeItem('messages');
+// localStorage.removeItem('bots');
 
 const setMessages = [];
+// const setBots = [];
 
 if (JSON.parse(localStorage.getItem('messages')) == null) localStorage.setItem('messages', JSON.stringify(setMessages));
+// if (JSON.parse(localStorage.getItem('bots')) == null) localStorage.setItem('bots', JSON.stringify(setBots));
 
 const Home = class {
   constructor(params) {
@@ -95,15 +73,15 @@ const Home = class {
     existingEntries.push(entry);
     localStorage.setItem('messages', JSON.stringify(existingEntries));
 
-    if (userType === 'user' && content.toLowerCase() === 'ronaldo') {
-      const botAnswer = 'Suiiiiiii';
-      const botEntry = {
-        content: botAnswer,
-        userType: 'bot'
-      };
-      existingEntries.push(botEntry);
-      localStorage.setItem('messages', JSON.stringify(existingEntries));
-    }
+    // if (userType === 'user' && content.toLowerCase() === 'ronaldo') {
+    //   const botAnswer = 'Suiiiiiii';
+    //   const botEntry = {
+    //     content: botAnswer,
+    //     userType: 'bot'
+    //   };
+    //   existingEntries.push(botEntry);
+    //   localStorage.setItem('messages', JSON.stringify(existingEntries));
+    // }
 
     this.el.innerHTML = this.render();
     const elRightSide = document.querySelector('.messages-section');
