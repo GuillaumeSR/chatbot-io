@@ -19,10 +19,7 @@ import viewChat from '../views/chat';
 
 // localStorage.clear();
 
-// localStorage.removeItem('bots');
-
 const setMessages = [];
-// const setBots = [];
 
 if (JSON.parse(localStorage.getItem('messages')) == null) localStorage.setItem('messages', JSON.stringify(setMessages));
 
@@ -64,16 +61,16 @@ const Home = class {
 
   // checkIfCommand(message) {
   //   const elUserInput = document.querySelector('#user-input').value;
+
   // }
 
   newMessage(content, userType = 'user') {
     let existingEntries = JSON.parse(localStorage.getItem('messages'));
-    if (existingEntries == null) existingEntries = [];
+    if (existingEntries === null) existingEntries = [];
     const entry = {
       content,
       userType
     };
-    localStorage.setItem('message', JSON.stringify(entry));
 
     existingEntries.push(entry);
     localStorage.setItem('messages', JSON.stringify(existingEntries));

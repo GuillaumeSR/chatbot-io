@@ -1,9 +1,11 @@
-// const Bots = class {
-//   constructor(entity) {
-//     this.entity = entity;
-//   }
+import actionHello from './actions/hello';
 
-//   checkAction() {
+const Bots = class {
+  constructor(entity) {
+    this.entity = entity;
+  }
 
-//   }
-// }
+  checkAction() {
+
+  }
+}
