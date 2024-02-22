@@ -1,3 +1,8 @@
+import viewNav from '../views/nav';
+// import viewBotCard from '../views/botcard';
+import dataBots from '../data/entity';
+import viewListBotCard from '../views/list-botcards';
+
 const Bots = class {
   constructor(params) {
     this.el = document.querySelector('#root');
@@ -8,7 +13,12 @@ const Bots = class {
 
   render() {
     return `
-    <h1>Oooh, les belles lucioles !</h1>
+    <div>${viewNav()}</div>
+    <div class="container">
+        <div class="row">
+          ${viewListBotCard(dataBots)}
+        </div>
+    </div>
     `;
   }
 
