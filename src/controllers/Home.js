@@ -2,8 +2,10 @@
 
 import viewListBots from '../views/list-bots';
 import viewNav from '../views/nav';
+import dataBots from '../data/entity';
 // import viewListMessages from '../views/list-message';
 import viewChat from '../views/chat';
+// import Bot from '../models/bots/index';
 
 // localStorage.setItem('bots', JSON.stringify(dataBots));
 // let messages = localStorage.getItem('messages');
@@ -23,7 +25,6 @@ const setMessages = [];
 // const setBots = [];
 
 if (JSON.parse(localStorage.getItem('messages')) == null) localStorage.setItem('messages', JSON.stringify(setMessages));
-// if (JSON.parse(localStorage.getItem('bots')) == null) localStorage.setItem('bots', JSON.stringify(setBots));
 
 const Home = class {
   constructor(params) {
@@ -61,6 +62,10 @@ const Home = class {
     });
   }
 
+  // checkIfCommand(message) {
+  //   const elUserInput = document.querySelector('#user-input').value;
+  // }
+
   newMessage(content, userType = 'user') {
     let existingEntries = JSON.parse(localStorage.getItem('messages'));
     if (existingEntries == null) existingEntries = [];
@@ -73,16 +78,6 @@ const Home = class {
     existingEntries.push(entry);
     localStorage.setItem('messages', JSON.stringify(existingEntries));
 
-    // if (userType === 'user' && content.toLowerCase() === 'ronaldo') {
-    //   const botAnswer = 'Suiiiiiii';
-    //   const botEntry = {
-    //     content: botAnswer,
-    //     userType: 'bot'
-    //   };
-    //   existingEntries.push(botEntry);
-    //   localStorage.setItem('messages', JSON.stringify(existingEntries));
-    // }
-
     this.el.innerHTML = this.render();
     const elRightSide = document.querySelector('.messages-section');
     elRightSide.scrollTo(0, elRightSide.scrollHeight);
@@ -94,7 +89,7 @@ const Home = class {
     <div class="container">
         <div class="row">
           <div class="col-3">
-          ${viewListBots(JSON.parse(localStorage.getItem('bots')))}
+          ${viewListBots(dataBots)}
           </div>
           <div class="col-9">
           ${viewChat(JSON.parse(localStorage.getItem('messages')))}
