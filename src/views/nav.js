@@ -6,8 +6,8 @@ export default () => (`
         <img class="logo" src="https://cdn.discordapp.com/attachments/1160934866527981649/1208049234813784125/bulbi-removebg-preview.png?ex=65e1de86&is=65cf6986&hm=8e62327ff9d9aa036c1911e0ffea2e031b654277a7ab6adc999218d8e475995c&" alt="Logo">
       </div>
       <form class="btn-nav">
-        <button class="btn-unique" type="button">All Bots</button>
-        <button class="btn-unique" type="button">Chat with bots</button>
+        <button class="btn-unique" type="button" onclick="window.location.href='/bots'">All Bots</button>
+        <button class="btn-unique" type="button" onclick="window.location.href='/home'">Chat with bots</button>
       </form>
     </div>
   </div>
