@@ -1,6 +1,5 @@
 import viewNav from '../views/nav';
-// import viewBotCard from '../views/botcard';
-import dataBots from '../data/entity';
+import dataBots from '../data/entities';
 import viewListBotCard from '../views/list-botcards';
 
 const Bots = class {
@@ -12,14 +11,14 @@ const Bots = class {
   }
 
   render() {
-    return `
+    return (`
     <div>${viewNav()}</div>
     <div class="container">
-        <div class="row">
-          ${viewListBotCard(dataBots)}
-        </div>
+      <div class="row">
+        ${viewListBotCard(dataBots)}
+      </div>
     </div>
-    `;
+    `);
   }
 
   run() {

@@ -1,7 +1,6 @@
 import viewListMessages from './list-message';
 
-export default (data) => (
-  `
+export default (data) => (`
   <div class="chat-view">
     <div class="messages-section" id="chat-container">
       ${viewListMessages(data)}
@@ -11,9 +10,4 @@ export default (data) => (
       <button id="send-button" onclick()="onKeyUp()">Send</button>
     </div>
   </div>
-  `
-);
-
-// export default (data) => {
-//   console.log(data);
-// };
+`);
