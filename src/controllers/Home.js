@@ -88,7 +88,7 @@ const Home = class {
   }
 
   async loadApiMessages() {
-    const apiUrl = 'http://localhost/message';
+    const apiUrl = 'http://localhost/messages';
     try {
       const response = await axios.get(apiUrl);
       const dataMessage = response.data;
