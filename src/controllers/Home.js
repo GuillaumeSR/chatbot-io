@@ -1,4 +1,4 @@
-// import axios from 'axios';
+import axios from 'axios';
 
 import viewListBots from '../views/list-bots';
 import viewNav from '../views/nav';
@@ -73,7 +73,7 @@ const Home = class {
             ${viewListBots(dataBots)}
           </div>
           <div class="col-9">
-            ${viewChat(JSON.parse(localStorage.getItem('messages')))}
+            ${viewChat(JSON.parse(localStorage.getItem('messages')))} //JSON.parse(localStorage.getItem('messages'))
           </div>
         </div>
       </div>
@@ -87,8 +87,27 @@ const Home = class {
     }
   }
 
+  async loadApiMessages() {
+    const apiUrl = 'http://localhost/message';
+    try {
+      const response = await axios.get(apiUrl);
+      const dataMessage = response.data;
+
+      const existingEntries = [];
+
+      dataMessage.map((message) => existingEntries.push(message)).join('');
+
+      localStorage.setItem('messages', JSON.stringify(existingEntries));
+
+      console.log(dataMessage);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   run() {
     this.checkMessageLog();
+    this.loadApiMessages();
     this.el.innerHTML = this.render();
     this.scrollDown();
     this.onKeyUp();
