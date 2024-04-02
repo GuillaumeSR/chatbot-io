@@ -1,7 +1,9 @@
 const actionHello = {
   name: 'actionHello',
   keyWord: ['salut', 'coucou', 'bonjour', 'hello'],
-  action: ''
+  action() {
+    return 'Bonjour !';
+  }
 };
 
 export default actionHello;
