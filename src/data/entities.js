@@ -1,4 +1,6 @@
 import actionHello from '../models/bots/actions/hello';
+import actionPredecessor from '../models/bots/actions/predecessor';
+import actionBanwords from '../models/bots/actions/banwords';
 
 // export default () => (
 //   [
@@ -47,7 +49,9 @@ const dataBots = [
     image: 'https://i.pinimg.com/736x/d3/01/b6/d301b6d9ee94cee3ce81bb3352c049af.jpg',
     description: 'API perso d anime',
     commands: [
+      actionBanwords,
       actionHello,
+      actionPredecessor,
       'character'
     ]
   },

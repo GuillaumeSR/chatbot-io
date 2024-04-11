@@ -1,14 +1,11 @@
 import axios from 'axios';
-
 import viewListBots from '../views/list-bots';
 import viewNav from '../views/nav';
 import dataBots from '../data/entities';
 import viewChat from '../views/chat';
-// import Bot from '../models/bots/index';
-
 // localStorage.clear();
 
-const Home = class {
+class Home {
   constructor(params) {
     this.el = document.querySelector('#root');
     this.params = params;
@@ -22,7 +19,8 @@ const Home = class {
       const elUserInput = document.querySelector('#user-input');
 
       if (elUserInput.value.length) {
-        this.newMessage(elUserInput);
+        this.processMessage(elUserInput.value);
+        elUserInput.value = '';
       }
     });
   }
@@ -33,16 +31,33 @@ const Home = class {
         const elUserInput = document.querySelector('#user-input').value;
 
         if (typeof elUserInput === 'string' && elUserInput.length !== 0 && elUserInput !== null) {
-          this.newMessage(elUserInput);
+          this.processMessage(elUserInput);
+          document.querySelector('#user-input').value = '';
         }
       }
     });
   }
 
-  // checkIfCommand(message) {
-  //   const elUserInput = document.querySelector('#user-input').value;
+  processMessage(message) {
+    const userMessage = message.toLowerCase().trim();
 
-  // }
+    this.newMessage(message);
+
+    const botResponses = [];
+    dataBots.forEach((bot) => {
+      bot.commands.forEach((command) => {
+        if (typeof command === 'string' && userMessage.includes(command)) {
+          botResponses.push({ bot: bot.name, message: bot.action() });
+        } else if (typeof command === 'object' && command.keyWord.some((keyword) => userMessage.includes(keyword))) {
+          botResponses.push({ bot: bot.name, message: command.action() });
+        }
+      });
+    });
+
+    botResponses.forEach((response) => {
+      this.newMessage(response.message, 'bot');
+    });
+  }
 
   newMessage(content, userType = 'user') {
     let existingEntries = JSON.parse(localStorage.getItem('messages'));
@@ -73,7 +88,7 @@ const Home = class {
             ${viewListBots(dataBots)}
           </div>
           <div class="col-9">
-            ${viewChat(JSON.parse(localStorage.getItem('messages')))} //JSON.parse(localStorage.getItem('messages'))
+            ${viewChat(JSON.parse(localStorage.getItem('messages')))}
           </div>
         </div>
       </div>
@@ -113,6 +128,6 @@ const Home = class {
     this.onKeyUp();
     this.onEnterPress();
   }
-};
+}
 
 export default Home;
